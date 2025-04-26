@@ -1,3 +1,7 @@
+
+<img width="1680" alt="Screenshot 2025-04-26 at 16 40 57" src="https://github.com/user-attachments/assets/160c93f8-511e-4a4b-9630-274229c03329" />
+<img width="1680" alt="Screenshot 2025-04-26 at 16 40 50" src="https://github.com/user-attachments/assets/f79dfb49-c500-49dc-ad46-384547d87e77" />
+
 # Landmarks App
 
 Bu uygulama, kullanıcıların harita üzerinde önemli yerleri (landmarks) işaretlemesine, notlar eklemesine, ziyaret geçmişini takip etmesine ve ziyaret planları oluşturmasına olanak tanıyan bir web uygulamasıdır.
