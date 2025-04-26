@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landmark Creator</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Landmarks App</h1>
+        </header>
+
+        <div class="main-content">
+            <div class="map-container">
+                <h2>Click on the Map to Add Landmarks</h2>
+                <div id="map"></div>
+            </div>
+            
+            <div class="sidebar">
+                <div class="form-container">
+                    <h3>Create New Landmark</h3>
+                    <form id="landmarkForm">
+                        <div class="form-group">
+                            <label for="landmarkName">Name:</label>
+                            <input type="text" id="landmarkName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="landmarkCategory">Category:</label>
+                            <select id="landmarkCategory">
+                                <option value="historical">Historical</option>
+                                <option value="natural">Natural</option>
+                                <option value="cultural">Cultural</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="landmarkDescription">Description:</label>
+                            <textarea id="landmarkDescription"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="landmarkNotes">Notes:</label>
+                            <textarea id="landmarkNotes"></textarea>
+                        </div>
+                        <div class="form-group location-display">
+                            <label>Location:</label>
+                            <span id="selectedLocation">No location selected</span>
+                        </div>
+                        <button type="submit" class="btn" id="saveLandmarkBtn" disabled>Save Landmark</button>
+                    </form>
+                </div>
+
+                <div class="landmark-list">
+                    <h3>Selected Landmarks</h3>
+                    <ul id="landmarkList"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button id="addNotesBtn" class="btn">Add Notes</button>
+            <button id="visitedLandmarksBtn" class="btn">Visited Landmarks</button>
+            <button id="createPlanBtn" class="btn">Create Visiting Plan</button>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="notesModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Notes</h2>
+            <form id="notesForm">
+                <div class="form-group">
+                    <label for="selectLandmark">Select Landmark:</label>
+                    <select id="selectLandmark"></select>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Notes:</label>
+                    <textarea id="notes"></textarea>
+                </div>
+                <button type="submit" class="btn">Save Notes</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="visitedModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Visited Landmarks</h2>
+            <div id="visitedList"></div>
+        </div>
+    </div>
+
+    <div id="planModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create Visiting Plan</h2>
+            <form id="planForm">
+                <div class="form-group">
+                    <label for="visitorName">Your Name:</label>
+                    <input type="text" id="visitorName" required>
+                </div>
+                <div class="form-group">
+                    <label>Select Landmarks to Visit:</label>
+                    <div id="planLandmarks"></div>
+                </div>
+                <div class="form-group">
+                    <label for="planNotes">Plan Notes:</label>
+                    <textarea id="planNotes"></textarea>
+                </div>
+                <button type="submit" class="btn">Save Plan</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
